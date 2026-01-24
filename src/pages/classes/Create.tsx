@@ -5,9 +5,9 @@ import {useBack} from "@refinedev/core";
 import {Separator} from "@/components/ui/separator.tsx";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card.tsx"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { appendErrors, useForm } from "react-hook-form"
 import {classSchema} from "@/lib/schema.ts";
 import * as z from "zod";
+import { useForm } from "@refinedev/react-hook-form"
 
 import {
     Form,

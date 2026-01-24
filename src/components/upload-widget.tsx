@@ -3,7 +3,18 @@ import { UploadWidgetValue } from '@/types'
 import { UploadCloud } from 'lucide-react'
 import React, { useEffect, useRef, useState } from 'react'
 
-const UploadWidget = ({ value = null, onChange, disabled = false}) => {
+interface UploadWidgetProps {
+  value?: UploadWidgetValue | null;
+  onChange?: (payload: UploadWidgetValue) => void;
+  disabled?: boolean;
+}
+
+const UploadWidget: 
+    React.FC<UploadWidgetProps> = ({ 
+      value = null, 
+      onChange, 
+      disabled = false 
+    }) =>  {
 
   // widget ref  & onChange ref
     const widgetRef = useRef<CloudinaryWidget | null>(null)
@@ -78,8 +89,12 @@ const UploadWidget = ({ value = null, onChange, disabled = false}) => {
         </div>
       ) : (
         <div 
-          onClick={openWidget} className="upload-dropzone"
-          onKeyDown={(e) => {
+           onClick={openWidget} 
+           className="upload-dropzone"
+           role="button"
+           tabIndex={0}
+           aria-label="Upload image"
+           onKeyDown={(e) => {
             if(e.key === "Enter") {
               e.preventDefault();
               openWidget();
@@ -90,7 +105,7 @@ const UploadWidget = ({ value = null, onChange, disabled = false}) => {
               <UploadCloud className='icon' />
               <div>
                 <p>Click to upload a Photo</p>
-                <p>PNG, JPG,up to 1MB</p>
+                <p>PNG, JPG, WEBP up to 5MB</p>
               </div>
             </div>
         </div>
