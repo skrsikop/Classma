@@ -77,23 +77,6 @@ export const BACKEND_BASE_URL = requireEnv(
     import.meta.env.VITE_BACKEND_BASE_URL
 );
 
-export const BASE_URL = 
-// requireEnv("VITE_API_URL", 
-    import.meta.env.VITE_API_URL
-    // );
-export const ACCESS_TOKEN_KEY = 
-// requireEnv(
-//     "VITE_ACCESS_TOKEN_KEY",
-    import.meta.env.VITE_ACCESS_TOKEN_KEY
-// );
-export const REFRESH_TOKEN_KEY = 
-// requireEnv(
-//     "VITE_REFRESH_TOKEN_KEY",
-    import.meta.env.VITE_REFRESH_TOKEN_KEY
-// );
-
-export const REFRESH_TOKEN_URL = `${BASE_URL.replace(/\/+$/, "")}/refresh-token`;
-
 export const CLOUDINARY_UPLOAD_PRESET = 
 requireEnv(
     "VITE_CLOUDINARY_UPLOAD_PRESET",
