@@ -19,6 +19,7 @@ import SubjectsCreate from "./pages/subjects/Create";
 import { dataProvider } from "./providers/data";
 import ClassesList from "./pages/classes/List";
 import CreateClasses from "./pages/classes/Create";
+import ClassesShow from "./pages/classes/Show";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
                 {
                   name: "classes",
                   list: "classes",
+                  show: "classes/show/:id",
                   create: "/classes/create",
                   meta: { label: "Classes", icon: <GraduationCap />}
                 },
@@ -69,6 +71,7 @@ function App() {
                   <Route path="classes">
                     <Route index element={<ClassesList />} />
                     <Route path="create" element={<CreateClasses />} />
+                    <Route path="show/:id" element={<ClassesShow />} />
                   </Route>
                 </Route>
                 
