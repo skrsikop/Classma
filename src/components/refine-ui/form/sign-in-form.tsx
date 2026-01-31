@@ -67,7 +67,7 @@ export const SignInForm = () => {
       )}
     >
         <div className="logo w-18">
-        <img src="../assets/logo.png" alt="Logo" />
+        <img src="/logo.png" alt="Logo" />
       </div>
 
       <Card className={cn("sm:w-114", "p-12", "mt-6")}>
